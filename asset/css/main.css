@@ -253,6 +253,10 @@ p{
     background: url(../images/dark-bg.jpg) no-repeat center fixed;
     background-size: cover;
 }
+.book.darker{
+    background: url(../images/dark-bg-2.jpg) no-repeat center fixed;
+    background-size: cover;
+}
 .book p{
     color: rgba(255,255,255,0.8);
 }
@@ -260,7 +264,8 @@ p{
     width: 100%;
     float: left;
 }
-.book-form input{
+.book-form input,
+.book-form textarea{
     width: 100%;
     height: 50px;
     background: none;
@@ -268,6 +273,9 @@ p{
     border-bottom: 1px solid rgba(255,255,255,0.3);
     font-size: 14px;
     color: #fff;
+}
+.book-form textarea{
+    height: auto;
 }
 .book-form label{
     position: absolute;
@@ -277,11 +285,13 @@ p{
     color: #fff;
     opacity: 0;
 }
-.book-form input:focus{
+.book-form input:focus,
+.book-form textarea:focus{
     outline: none;
     border-color: #fff;
 }
-.book-form input:focus ~ label{
+.book-form input:focus ~ label,
+.book-form textarea:focus ~ label{
     opacity: 1;
 }
 .book-form .column{
@@ -432,7 +442,7 @@ p{
 }
 
 footer{
-    background: url(../images/dark-bg.jpg) no-repeat center fixed;
+    background: url(../images/footer-bg.jpg) no-repeat center fixed;
     background-size: cover;
     color: rgba(255,255,255,0.8);
     padding: 80px 0 17px 0;
@@ -498,6 +508,10 @@ footer p i{
 
 .page-cover{
     padding: 0;
+    height: 720px;
+}
+.page-cover.sm{
+    height: 420px;
 }
 .page-cover figure{
     background: var(--blue4);
@@ -662,20 +676,48 @@ footer p i{
 .links{
     width: 100%;
     float: left;
+    padding-right: 50px;
 }
 .links a{
     width: 100%;
     float: left;
+    position: relative;
     padding: 10px 20px;
-    border: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
     font-size: 16px;
     color: #333;
     margin-bottom: 10px;
+    border-radius: 6px 0 0 6px;
+    -moz-border-radius: 6px 0 0 6px;
+    -webkit-border-radius: 6px 0 0 6px;
+}
+.links a::after{
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    -moz-transform: translate(-50%,-50%) rotate(45deg);
+    -webkit-transform: translate(-50%,-50%) rotate(45deg);
+    border-radius: 0 6px 0 0;
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-top: 1px solid #dedede;
+    border-right: 1px solid #dedede;
 }
 .links a.active{
     background: var(--blue2);
     color: #fff;
     font-weight: 700;
+}
+.links a.active::after{
+    background: var(--blue2);
+    border-color: var(--blue2);
 }
 
 .spacer{
@@ -737,4 +779,145 @@ footer p i{
 }
 .accordion .item.show .acc-content{
     display: block;
+}
+
+.h-card{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+.h-card figure{
+    margin-bottom: 10px;
+}
+.h-card h3{
+    font-size: 18px;
+}
+.h-card h3 a{
+    color: #333;
+}
+
+.tab-wrap{
+    width: 100%;
+    float: left;
+    padding: 2px;
+    border: 1px solid #dedede;
+}
+.tab-header{
+    width: 100%;
+    float: left;
+    background: #f4f4f4;
+}
+.tab-header span{
+    width: 78px;
+    float: left;
+    text-align: center;
+    font-weight: 700;
+    background: var(--blue2);
+    color: #fff;
+    font-size: 15px;
+    padding: 15px;
+}
+.tab-header a{
+    width: calc((100% - 78px) / 18);
+    float: left;
+    padding: 15px 0 12px;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+    border-bottom: 3px solid #f4f4f4;
+}
+.tab-header a.active{
+    border-color: var(--blue2);
+    font-weight: 700;
+    color: var(--blue2);
+}
+.tab-header a:hover{
+    color: var(--blue3);
+    border-color: var(--blue2);
+}
+.tab-ct{
+    width: 100%;
+    float: left;
+    padding: 30px;
+    display: none;
+}
+.tab-ct.show{
+    display: block;
+}
+.tab-ct .pic{
+    width: 220px;
+    float: left;
+}
+.tab-ct .text{
+    width: calc(100% - 220px);
+    float: left;
+    padding-left: 30px;
+}
+.map-area{
+    padding-top: 40.15%;
+    margin-bottom: 30px;
+    background: url(../images/area/off.jpg) no-repeat center;
+    background-size: cover;
+}
+.map-area img{
+    opacity: 0;
+}
+.map-area img.show{
+    opacity: 1;
+}
+
+.article-slider{
+    width: 100%;
+    float: left;
+}
+.article-slider#sync1 .owl-prev,
+.article-slider#sync1 .owl-next{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    opacity: 0.5;
+    overflow: hidden;
+    text-indent: -200px;
+}
+.article-slider#sync1 .owl-prev:hover,
+.article-slider#sync1 .owl-next:hover{
+    opacity: 1;
+}
+.article-slider#sync1 .owl-prev{
+    background: url(../images/prev.png) no-repeat center;
+    background-size: contain;
+    left: 10px;
+}
+.article-slider#sync1 .owl-next{
+    background: url(../images/next.png) no-repeat center;
+    background-size: contain;
+    right: 10px;
+}
+
+.article-slider#sync2 .owl-item{
+    opacity: 0.5;
+}
+.article-slider#sync2 .owl-item.synced{
+    opacity: 1;
+}
+
+.side-slider .owl-pagination{
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+.side-slider .owl-pagination .owl-page{
+    float: left;
+    margin-right: 5px;
+}
+.side-slider .owl-pagination .owl-page span{
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #dedede;
+}
+.side-slider .owl-pagination .owl-page.active span{
+    background: var(--blue2);
+    width: 60px;
 }

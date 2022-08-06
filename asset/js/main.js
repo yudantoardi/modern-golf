@@ -5,4 +5,16 @@ $(document).ready(function(){
         $($(this).parent()).addClass("show");
     });
 
+    $(".tab-header a").click(function(th){
+        th.preventDefault();
+
+        $(".tab-header a").removeClass("active");
+        $(this).addClass("active");
+        $(".tab-ct").removeClass("show");
+        $("#" + $(this).attr("href")).addClass("show");
+
+        $(".map-area img").removeClass("show");
+        $(".map-area img." + $(this).attr("href")).addClass("show");
+    });
+
 });
