@@ -17,4 +17,9 @@ $(document).ready(function(){
         $(".map-area img." + $(this).attr("href")).addClass("show");
     });
 
+    $(".burger").click(function(){
+        $("header").toggleClass("active");
+
+        $(".burger i").toggleClass("fa-bars fa-times");
+    });
 });
