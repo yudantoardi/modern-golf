@@ -1034,7 +1034,7 @@ footer p i{
     display: none !important;
 }
 
-@media only screen and (max-width: 1440px){
+@media only screen and (max-width: 1600px){
     header{
         padding-left: 40px;
         padding-right: 40px;
