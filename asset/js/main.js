@@ -22,4 +22,15 @@ $(document).ready(function(){
 
         $(".burger i").toggleClass("fa-bars fa-times");
     });
+
+    var yourNavigation = $("header");
+        stickyDiv = "scrolled";
+
+    $(window).scroll(function() {
+    if( $(this).scrollTop() > 300 ) {
+        yourNavigation.addClass(stickyDiv);
+    } else {
+        yourNavigation.removeClass(stickyDiv);
+    }
+    });
 });

@@ -99,8 +99,13 @@ figure img{
 .btn-primary{
     background: url(../images/btn-primary-bg.png) no-repeat center right;
     background-size: cover;
-    color: #fff;
+    color: rgba(255,255,255,0.7);
     border: none;
+    transition: all ease-out 0.3s;
+}
+.btn-primary:hover{
+    color: #fff;
+    background: url(../images/btn-primary-bg-hover.png) no-repeat center right;
 }
 .btn-secondary{
     background: url(../images/btn-secondary-bg.png) no-repeat center right;
@@ -128,6 +133,7 @@ a.logo{
     height: 110px;
     float: left;
     text-align: left;
+    position: relative;
 }
 a.logo img{
     width: 120px;
@@ -208,7 +214,6 @@ a.logo img{
     opacity: 1;
     pointer-events: auto;
 }
-
 
 section.hero{
     padding: 0;
@@ -715,6 +720,9 @@ footer p i{
 }
 .video-fw img{
     opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .about-motion h2{
     position: absolute;
@@ -1034,6 +1042,10 @@ footer p i{
     display: none !important;
 }
 
+.is-rtl{
+    flex-direction: row-reverse;
+}
+
 @media only screen and (max-width: 1600px){
     header{
         padding-left: 40px;
@@ -1054,6 +1066,50 @@ footer p i{
     }
 }
 
+@media only screen and (min-width: 1025px){
+    header.scrolled{
+        background: #fff;
+        height: 80px;
+        padding-top: 10px;
+    }
+    header.scrolled .main-menu li a{
+        color: #333;
+    }
+    header.scrolled .main-menu li a:hover{
+        color: var(--blue2);
+    }
+    header.scrolled .src-form input{
+        color: #333;
+        border-bottom: 1px solid #dedede;
+    }
+    header.scrolled .src-form button{
+        color: #333;
+    }
+    header a.logo::before{
+        content: "";
+        background: #fff;
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        z-index: -1;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -webkit-transition: all 0.3s ease-out;
+    }
+    header.scrolled a.logo::before{
+        opacity: 1;
+    }
+    
+}
 @media only screen and (max-width: 1024px){
     .for-mobile{
         display: inline-block !important;
@@ -1245,5 +1301,37 @@ footer p i{
     }
     .left-sidebar{
         margin-bottom: 40px;
+    }
+
+    .video-fw{
+        padding-top: 100%;
+    }
+    .events figure{
+        margin-bottom: 20px;
+    }
+
+    .h-card{
+        margin-bottom: 40px;
+    }
+
+    .tab-ct{
+        padding: 20px;
+    }
+    .tab-ct .pic{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .tab-ct .text{
+        width: 100%;
+        padding-left: 0;
+    }
+    .tab-header{
+        overflow-y: auto;
+        white-space: nowrap;
+    }
+    .tab-header a{
+        width: 40px;
+        display: inline-block;
+        float: none;
     }
 }
