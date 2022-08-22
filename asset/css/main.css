@@ -1334,4 +1334,28 @@ footer p i{
         display: inline-block;
         float: none;
     }
+
+    .links{
+        width: calc(100% + 40px);
+        padding-right: 0;
+        white-space: nowrap;
+        overflow-x: auto;
+        position: absolute;
+        top: -68px;
+        left: -20px;
+    }
+    .links a{
+        display: inline-block;
+        width: auto;
+        border-top: none;
+        border-left: none;
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        font-size: 13px;
+        float: none;
+    }
+    .links a::after{
+        display: none;
+    }
 }
